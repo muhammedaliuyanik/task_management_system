@@ -9,24 +9,27 @@ namespace TaskManagementSystem.Models
         public int UserId { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [MaxLength(100)]
         public string Username { get; set; }
 
         [Required]
-        [StringLength(100)]
-        [DataType(DataType.Password)]
+        [MaxLength(100)]
         public string Password { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [MaxLength(100)]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         public UserRole Role { get; set; }
 
+        [MaxLength(100)]
         public string FirstName { get; set; }
+
+        [MaxLength(100)]
         public string LastName { get; set; }
+
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
     }

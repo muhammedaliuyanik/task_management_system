@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -15,16 +14,16 @@ namespace TaskManagementSystem.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    UserId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Role = table.Column<int>(type: "int", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Username = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Password = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Email = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Role = table.Column<int>(type: "INTEGER", nullable: false),
+                    FirstName = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    LastName = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    CreatedDate = table.Column<string>(type: "TEXT", nullable: false),
+                    UpdatedDate = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -35,12 +34,12 @@ namespace TaskManagementSystem.Migrations
                 name: "UserProfiles",
                 columns: table => new
                 {
-                    UserProfileId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
-                    ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UserProfileId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Address = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    PhoneNumber = table.Column<string>(type: "TEXT", maxLength: 15, nullable: true),
+                    ProfilePicture = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
